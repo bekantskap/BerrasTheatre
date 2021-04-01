@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BerrasTheatre.Models.ShowSeat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booked)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booked)
+            </td>
+            <td>
+                <a asp-action="Book" asp-route-id="@item.Id">Book</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

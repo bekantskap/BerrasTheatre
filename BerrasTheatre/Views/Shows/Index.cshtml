@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BerrasTheatre.Models.Show>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body class="moviePage">
+
+    <h2>Movies today - @ViewData["DateToDay"]</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]" title="Sort Start time">Start</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MovieTitleSortParm"]" title="Sort Movie title">Movie title</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimespanSortParm"]" title="Sort timespan">Timespan</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SalonSortParm"]" title="sort salon nr">Salon</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SeatsSortParm"]" title="Sort seats">Seats</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["RemainingSeatsSortParm"]" title="Sort seats left">Seats left</a>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")">
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.StartTime)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.Title)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.TimeSpan)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.SalonId)</a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Salon.SeatNum)</a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.RemainingSeats)</a>
+
+                    </td>
+
+                    <td>
+                        @{var nrSeats = item.RemainingSeats;
+                        }
+
+                        @if (nrSeats > 0)
+                        {
+                            <a asp-action="Book" asp-route-id="@item.Id" title="Book tickets">Book</a>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Start Page</a>
+
+    </div>
+
+
+</body>

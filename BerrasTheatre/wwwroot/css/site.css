@@ -8,13 +8,28 @@ a.navbar-brand {
     font-family: 'Roboto', sans-serif;
     padding-right: 20px;
 }
-
-
-
-
 /* Provide sufficient contrast against white background */
 a {
     color: #0366d6;
+}
+
+body {
+    background-image: url("../img/bakgrund.jpg");
+    background-size: cover;
+    background-color: rgb(33 26 26 / 0.94);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+}
+
+.img-center{
+    
+    height: 90px;
+    width: 180px;
+}
+
+.movieLink{
+    color:black;
 }
 
 .nav-item {
@@ -26,15 +41,6 @@ a {
     max-width: 100%;
     padding: 0 0 0 0;
     padding: 0 0 0 0;
-}
-
-.background {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    /*    border: 2px solid;
-    color: pink;*/
-    /*padding: 0 0 0 0;*/
 }
 
 .display-4 {
@@ -96,11 +102,6 @@ html {
     min-height: 100%;
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-
 .footer {
     position: absolute;
     bottom: 0;
@@ -112,12 +113,12 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 0 10px;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
-    flex: 15%;
+    flex: 10%;
     max-width: 15%;
     padding: 0 4px;
     margin-left: 27px;
@@ -144,3 +145,16 @@ body {
         max-width: 100%;
     }
 }
+
+.column figure img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .6s ease-in-out;
+    transition: .6s ease-in-out;
+}
+
+.column figure:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+

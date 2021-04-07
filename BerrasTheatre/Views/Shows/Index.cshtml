@@ -9,7 +9,7 @@
     <h2>Showtimes today:  @ViewData["DateToDay"]</h2>
 
 
-    <table class="table">
+    <table class="table table-borderless table-hover">
         <thead>
             <tr>
                 <th>
@@ -41,22 +41,22 @@
                     <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.Title)</a>
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Salon.SeatNum)</a>
+                    <p class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Salon.SeatNum)</p>
 
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.RemainingSeats)</a>
+                    <p class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.RemainingSeats)</p>
 
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.TimeSpan)</a>
+                    <p class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.TimeSpan)</p>
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.SalonId)</a>
+                    <p class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.SalonId)</p>
 
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.StartTime)</a>
+                    <p class="@(item.RemainingSeats > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.StartTime)</p>
                 </td>
 
                 <td>
@@ -65,7 +65,8 @@
 
                     @if (nrSeats > 0)
                     {
-                        <a asp-action="Book" asp-route-id="@item.Id" title="Book tickets">Book</a>
+                        @*<a asp-action="Book" asp-route-id="@item.Id" title="Book tickets">Book</a>*@
+                        <a button type="button" class="btn btn-primary" asp-action="Book" asp-route-id="@item.Id" title="Book tickets">Book Tickets</a>
                     }
 
                 </td>
@@ -73,11 +74,6 @@
             }
         </tbody>
     </table>
-
-    <div>
-        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Start Page</a>
-
-    </div>
 
 
 </body>

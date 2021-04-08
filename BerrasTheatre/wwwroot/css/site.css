@@ -20,20 +20,34 @@ body {
 }
 
 a {
-    color: black;
+    color: darkgrey;
     font-size: 22px;
     font-family:'New Tegomin', Arial, sans-serif;
 }
 a:hover{
-    color:darkgrey;
-}
-
-h2{
-    color: antiquewhite;
+    color:black;
+    text-decoration: none;
 }
 
 p{
     color: antiquewhite;
+}
+
+h1{
+    color: antiquewhite;
+    font-family:Roboto;
+}
+
+h2 {
+    color: antiquewhite;
+}
+
+h3 {
+    color:antiquewhite;
+}
+
+.bookingtext{
+    color:antiquewhite;
 }
 
 .btn-primary {
@@ -45,6 +59,10 @@ p{
     
     height: 90px;
     width: 180px;
+}
+
+.movieBooked{
+   color:red;
 }
 
 .movieLink{

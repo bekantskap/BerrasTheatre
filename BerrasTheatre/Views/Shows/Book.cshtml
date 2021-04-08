@@ -4,35 +4,46 @@
     ViewData["Title"] = "Book";
 }
 
-<h1>Book</h1>
+<h1>Book your tickets</h1>
 
-<div>
-    <h4>Show</h4>
+<div class="bookingtext">
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartTime)
+        <dt class="col-sm-2">
+            Show Start
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StartTime)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RemainingSeats)
+        <dt class="col-sm-2">
+            Remaining Seats
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RemainingSeats)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie)
+        <dt class="col-sm-2">
+            Movie
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Title)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Salon)
+        <dt class="col-sm-2">
+            Plot
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Info)
+        </dd>
+        <dt class="col-sm-2">
+            Salon
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Salon.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Price
+        </dt>
+        <dd class="col-sm-10">
+            @ViewData["TicketPrice"] Sek
         </dd>
         <dd>
             @using (Html.BeginForm("Book"))

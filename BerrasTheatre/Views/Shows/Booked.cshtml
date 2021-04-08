@@ -4,10 +4,10 @@
     ViewData["Title"] = "Booked";
 }
 
-<h1>Booked</h1>
+<h1>Here are your booked tickets.</h1>
 
-<div>
-    <h4>Show</h4>
+<div class="bookingtext">
+    <h4>An email confirmation has been sent.</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -34,6 +34,18 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Salon.Id)
         </dd>
+        <dt class="col-sm-2">
+            Ticket Price
+        </dt>
+        <dd class="col-sm-10">
+            @ViewData["TicketPrice"] Sek
+        </dd>
+        <dt class="col-sm-2">
+            Total Ticket Price
+        </dt>
+        <dd class="col-sm-10">
+            @ViewData["TotalTicketPrice"] Sek
+        </dd>
     </dl>
 </div>
 <hr />
@@ -41,5 +53,5 @@
 <br>
 <hr />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Movies</a>
 </div>

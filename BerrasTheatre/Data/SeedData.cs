@@ -66,12 +66,12 @@ namespace BerrasTheatre.Data
 
             var showings = new Show[]
             {
-            new Show{StartTime=DateTime.Parse("14:00"),MovieId=4,SalonId=1,RemainingSeats=30},
-            new Show{StartTime=DateTime.Parse("14:00"),MovieId=4,SalonId=2,RemainingSeats=70},
+            new Show{StartTime=DateTime.Parse("14:00"),MovieId=4,SalonId=1,RemainingSeats=70},
+            new Show{StartTime=DateTime.Parse("14:00"),MovieId=4,SalonId=2,RemainingSeats=30},
             new Show{StartTime=DateTime.Parse("16:30"),MovieId=1,SalonId=1,RemainingSeats=32},
             new Show{StartTime=DateTime.Parse("20:00"),MovieId=2,SalonId=1,RemainingSeats=22},
             new Show{StartTime=DateTime.Parse("23:30"),MovieId=3,SalonId=1,RemainingSeats=37},
-            new Show{StartTime=DateTime.Parse("16:00"),MovieId=1,SalonId=2,RemainingSeats=78},
+            new Show{StartTime=DateTime.Parse("16:00"),MovieId=1,SalonId=2,RemainingSeats=22},
             new Show{StartTime=DateTime.Parse("19:30"),MovieId=2,SalonId=2,RemainingSeats=10},
             new Show{StartTime=DateTime.Parse("23:00"),MovieId=3,SalonId=2,RemainingSeats=15}
 

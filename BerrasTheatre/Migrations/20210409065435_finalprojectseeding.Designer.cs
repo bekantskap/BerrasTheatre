@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BerrasTheatre.Migrations
 {
     [DbContext(typeof(CinemaContext))]
-    [Migration("20210404170018_correctedwrongid")]
-    partial class correctedwrongid
+    [Migration("20210409065435_finalprojectseeding")]
+    partial class finalprojectseeding
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

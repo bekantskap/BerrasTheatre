@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BerrasTheatre.Models.Show>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Shows";
 }
 
 <body class="moviePage">
@@ -22,13 +22,13 @@
                     <a asp-action="Index" asp-route-sortOrder="@ViewData["RemainingSeatsSortParm"]" title="Sort seats left">Seats left</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]" title="Sort Start time">Start</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSpanSortParm"]" title="Sort Start time">Length</a>
                 </th>
                 <th>
                     <a asp-action="Index" asp-route-sortOrder="@ViewData["SalonSortParm"]" title="sort salon nr">Salon</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimespanSortParm"]" title="Sort timespan">Length</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["StartTimeSortParm"]" title="Sort timespan">Start time</a>
                 </th>
             </tr>
         </thead>

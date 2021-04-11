@@ -22,11 +22,11 @@ namespace BerrasTheatre.Controllers
         // GET: Shows
         public async Task<IActionResult> Index(string sortOrder)
         {
-            ViewData["StartSortParm"] = sortOrder == "Time" ? "time_desc" : "Time";
+            ViewData["StartTimeSortParm"] = sortOrder == "Time" ? "time_desc" : "Time";
             ViewData["MovieTitleSortParm"] = String.IsNullOrEmpty(sortOrder) ? "movietitle_desc" : "";
-            ViewData["TimespanSortParm"] = sortOrder == "Timespan" ? "timespan_desc" : "Timespan";
-            ViewData["SalonSortParm"] = sortOrder == "SalonId" ? "lounge_desc" : "LoungeID";
-            ViewData["SeatsSortParm"] = sortOrder == "Seats" ? "seat_desc" : "Seats";
+            ViewData["TimeSpanSortParm"] = sortOrder == "TimeSpan" ? "timespan_desc" : "TimeSpan";
+            ViewData["SalonSortParm"] = sortOrder == "SalonId" ? "salon_desc" : "SalonId";
+            ViewData["SeatsSortParm"] = sortOrder == "Seats" ? "seats_desc" : "Seats";
             ViewData["RemainingSeatsSortParm"] = sortOrder == "RemainingSeats" ? "remainingseats_desc" : "RemainingSeats";
 
             DateTime today = DateTime.Today;
@@ -34,7 +34,7 @@ namespace BerrasTheatre.Controllers
 
             var shows = from s in _context.Shows
                            .Include(m => m.Movie)
-                           .Include(l => l.Salon)
+                           .Include(s => s.Salon)
                         select s;
 
             switch (sortOrder)
@@ -48,10 +48,10 @@ namespace BerrasTheatre.Controllers
                     break;
 
                 case "movietitle_desc":
-                    shows = shows.OrderBy(m => m.Movie.Title);
+                    shows = shows.OrderByDescending(m => m.Movie.Title);
                     break;
 
-                case "Timespan":
+                case "TimeSpan":
                     shows = shows.OrderBy(s => s.Movie.TimeSpan);
                     break;
 
@@ -59,32 +59,32 @@ namespace BerrasTheatre.Controllers
                     shows = shows.OrderByDescending(s => s.Movie.TimeSpan);
                     break;
 
-                case "LoungeID":
+                case "SalonId":
                     shows = shows.OrderBy(s => s.SalonId);
                     break;
 
-                case "lounge_desc":
-                    shows = shows.OrderBy(s => s.SalonId);
+                case "salon_desc":
+                    shows = shows.OrderByDescending(s => s.SalonId);
                     break;
 
                 case "Seats":
-                    shows = shows.OrderByDescending(s => s.Salon.SeatNum);
+                    shows = shows.OrderBy(s => s.Salon.SeatNum);
                     break;
 
                 case "seats_desc":
                     shows = shows.OrderByDescending(s => s.Salon.SeatNum);
                     break;
 
-                case "SeatsLeft":
-                    shows = shows.OrderByDescending(s => s.RemainingSeats);
+                case "RemainingSeats":
+                    shows = shows.OrderBy(s => s.RemainingSeats);
                     break;
 
-                case "seatsleft_desc":
+                case "remainingseats_desc":
                     shows = shows.OrderByDescending(s => s.RemainingSeats);
                     break;
 
                 default:
-                    shows = shows.OrderBy(s => s.StartTime);
+                    shows = shows.OrderBy(m => m.Movie.Title);
                     break;
 
             }

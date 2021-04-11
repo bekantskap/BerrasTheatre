@@ -2,7 +2,7 @@
 
 namespace BerrasTheatre.Migrations
 {
-    public partial class correcttheatreId : Migration
+    public partial class finalprojectseeding : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

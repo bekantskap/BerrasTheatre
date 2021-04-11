@@ -54,8 +54,8 @@ namespace BerrasTheatre.Data
 
             var salons = new Salon[]
             {
-            new Salon{Info="The small lounge with 3D screen and comfortable chairs",SeatNum=50, TicketPrice=1},
-            new Salon{Info="The big lounge with 3D screen and simolator comfortable chairs for optional 4D enjoyment", SeatNum=100, TicketPrice=1.1}
+            new Salon{Info="Traditional salon with old school 3d cardboard glasses.",SeatNum=50, TicketPrice=1},
+            new Salon{Info="Top of the line salon with Dolby 3000 sound system and massage chairs.", SeatNum=100, TicketPrice=1.1}
 
             };
             foreach (Salon s in salons)
@@ -73,7 +73,15 @@ namespace BerrasTheatre.Data
             new Show{StartTime=DateTime.Parse("23:30"),MovieId=3,SalonId=1,RemainingSeats=37},
             new Show{StartTime=DateTime.Parse("16:00"),MovieId=1,SalonId=2,RemainingSeats=22},
             new Show{StartTime=DateTime.Parse("19:30"),MovieId=2,SalonId=2,RemainingSeats=10},
-            new Show{StartTime=DateTime.Parse("23:00"),MovieId=3,SalonId=2,RemainingSeats=15}
+            new Show{StartTime=DateTime.Parse("23:00"),MovieId=3,SalonId=2,RemainingSeats=15},
+            new Show{StartTime=DateTime.Parse("02:00"),MovieId=7,SalonId=1,RemainingSeats=43},
+            new Show{StartTime=DateTime.Parse("02:00"),MovieId=8,SalonId=2,RemainingSeats=35},
+            new Show{StartTime=DateTime.Parse("04:30"),MovieId=9,SalonId=1,RemainingSeats=5},
+            new Show{StartTime=DateTime.Parse("07:00"),MovieId=6,SalonId=1,RemainingSeats=11},
+            new Show{StartTime=DateTime.Parse("10:30"),MovieId=5,SalonId=1,RemainingSeats=15},
+            new Show{StartTime=DateTime.Parse("05:00"),MovieId=10,SalonId=2,RemainingSeats=6},
+            new Show{StartTime=DateTime.Parse("08:30"),MovieId=11,SalonId=2,RemainingSeats=14},
+            new Show{StartTime=DateTime.Parse("11:00"),MovieId=12,SalonId=2,RemainingSeats=7}
 
             };
             foreach (Show s in showings)

@@ -1,46 +1,45 @@
 ﻿@model BerrasTheatre.Models.Show
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Movie Info";
 }
 
-<h1>Details</h1>
+<h1>Movie Information</h1>
 
-<div>
-    <h4>Show</h4>
+<div class="bookingtext">
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Info)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Info)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StartTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StartTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RemainingSeats)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RemainingSeats)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Salon)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Salon.Id)
-        </dd>
-    </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Info)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Info)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.StartTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RemainingSeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RemainingSeats)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Salon)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Salon.Id)
+            </dd>
+        </dl>
 </div>
 <div>
     <a asp-action="Index">Back to List</a>
